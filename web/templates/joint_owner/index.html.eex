@@ -1,0 +1,26 @@
+<h2>Listing joint owner</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for joint_owner <- @joint_owner do %>
+    <tr>
+      <td><%= joint_owner.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: joint_owner_path(@conn, :show, joint_owner), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: joint_owner_path(@conn, :edit, joint_owner), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: joint_owner_path(@conn, :delete, joint_owner), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New joint owner", to: joint_owner_path(@conn, :new) %>

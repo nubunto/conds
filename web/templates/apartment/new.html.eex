@@ -1,0 +1,6 @@
+<h2>New apartment</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: apartment_path(@conn, :create) %>
+
+<%= link "Back", to: apartment_path(@conn, :index) %>

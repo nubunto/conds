@@ -1,0 +1,18 @@
+<h2>Show condominium</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @condominium.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @condominium.address %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: condominium_path(@conn, :edit, @condominium) %>
+<%= link "Back", to: condominium_path(@conn, :index) %>

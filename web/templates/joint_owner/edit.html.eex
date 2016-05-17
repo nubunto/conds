@@ -1,0 +1,6 @@
+<h2>Edit joint owner</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: joint_owner_path(@conn, :update, @joint_owner) %>
+
+<%= link "Back", to: joint_owner_path(@conn, :index) %>

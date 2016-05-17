@@ -1,0 +1,6 @@
+<h2>New condominium</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: condominium_path(@conn, :create) %>
+
+<%= link "Back", to: condominium_path(@conn, :index) %>

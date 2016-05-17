@@ -1,0 +1,13 @@
+<h2>Show joint owner</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @joint_owner.name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: joint_owner_path(@conn, :edit, @joint_owner) %>
+<%= link "Back", to: joint_owner_path(@conn, :index) %>

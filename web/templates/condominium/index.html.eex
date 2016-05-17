@@ -1,0 +1,28 @@
+<h2>Listing condos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for condominium <- @condos do %>
+    <tr>
+      <td><%= condominium.name %></td>
+      <td><%= condominium.address %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: condominium_path(@conn, :show, condominium), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: condominium_path(@conn, :edit, condominium), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: condominium_path(@conn, :delete, condominium), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New condominium", to: condominium_path(@conn, :new) %>

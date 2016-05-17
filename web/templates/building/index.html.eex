@@ -1,0 +1,30 @@
+<h2>Listing buildings</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Floors</th>
+      <th>Apartments per floor</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for building <- @buildings do %>
+    <tr>
+      <td><%= building.name %></td>
+      <td><%= building.floors %></td>
+      <td><%= building.apartments_per_floor %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: building_path(@conn, :show, building), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: building_path(@conn, :edit, building), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: building_path(@conn, :delete, building), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New building", to: building_path(@conn, :new) %>

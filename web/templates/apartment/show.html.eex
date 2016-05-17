@@ -1,0 +1,18 @@
+<h2>Show apartment</h2>
+
+<ul>
+
+  <li>
+    <strong>Number:</strong>
+    <%= @apartment.number %>
+  </li>
+
+  <li>
+    <strong>Building:</strong>
+    <%= @apartment.building %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: apartment_path(@conn, :edit, @apartment) %>
+<%= link "Back", to: apartment_path(@conn, :index) %>

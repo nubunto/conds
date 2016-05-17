@@ -1,0 +1,28 @@
+<h2>Listing apartments</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Building</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for apartment <- @apartments do %>
+    <tr>
+      <td><%= apartment.number %></td>
+      <td><%= apartment.building %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: apartment_path(@conn, :show, apartment), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: apartment_path(@conn, :edit, apartment), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: apartment_path(@conn, :delete, apartment), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New apartment", to: apartment_path(@conn, :new) %>

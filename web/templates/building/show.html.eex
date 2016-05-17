@@ -1,0 +1,23 @@
+<h2>Show building</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @building.name %>
+  </li>
+
+  <li>
+    <strong>Floors:</strong>
+    <%= @building.floors %>
+  </li>
+
+  <li>
+    <strong>Apartments per floor:</strong>
+    <%= @building.apartments_per_floor %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: building_path(@conn, :edit, @building) %>
+<%= link "Back", to: building_path(@conn, :index) %>
